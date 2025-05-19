@@ -94,4 +94,9 @@ public class HomePage extends BasePage {
         context.driver.get(ConfigurationReader.get("productUrl"));
         return new JacketPage(context);
     }
+
+    public ProductPage goToProductsPage(){
+        context.driver.get(ConfigurationReader.get("productListUrl"));
+        return new ProductPage(context);
+    }
 }
