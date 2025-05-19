@@ -45,4 +45,15 @@ public class AddToCartSteps {
         Assertions.assertTrue(cartPage.isOnCartPage(), "Not on cart page");
         Assertions.assertTrue(cartPage.isCorrectProductInCart("Montana Wind Jacket"), "Product is not in the cart");
     }
+
+    @When("the user clicks the \"Add to Cart\" button")
+    public void buttonClick(){
+        jacketPage.addToCartButton.click();
+    }
+
+    @Then ("Required fields message is shown")
+    public void requiredFieldsMessage(){
+        Assertions.assertTrue(jacketPage.requiredFieldsMessage.isDisplayed(), "Ьessage not shown");
+
+    }
 }

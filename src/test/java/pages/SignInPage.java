@@ -8,6 +8,7 @@ import utils.ConfigurationReader;
 
 public class SignInPage extends BasePage{
     public SignInPage(TestContext context) {
+
         super(context);
     }
 

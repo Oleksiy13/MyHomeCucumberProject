@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class JacketPage extends BasePage{
     public JacketPage(TestContext context) {
+
         super(context);
     }
 
@@ -27,6 +28,9 @@ public class JacketPage extends BasePage{
 
     @FindBy(css = ".counter-number")
     public WebElement cartItemCount;
+
+    @FindBy(xpath = "//*[@id='super_attribute[143]-error']")
+    public WebElement requiredFieldsMessage;
 
     public void addToCart(){
         context.wait.until(ExpectedConditions.elementToBeClickable(sizeButton));
