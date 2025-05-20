@@ -33,7 +33,7 @@ public class CreateAccountSteps {
 
     @Then("an error message {string} should be displayed")
     public void errorMessageDisplayed(String expectedErrorMessage) {
-        String actualMessage = newCustomerPage.getExistingAccountErrorMessageText().trim(); // Добавили .trim() для удаления лишних пробелов/переносов строк
+        String actualMessage = newCustomerPage.getExistingAccountErrorMessageText().trim();
 
         Assertions.assertTrue(actualMessage.contains(expectedErrorMessage),
                 "Expected error message '" + expectedErrorMessage +

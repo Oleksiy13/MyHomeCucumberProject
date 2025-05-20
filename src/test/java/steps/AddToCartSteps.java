@@ -24,11 +24,6 @@ public class AddToCartSteps {
         this.cartPage = new CartPage(context);
     }
 
-//    @Given("the user is on the home page")
-//    public void goToHomePage() {
-//        context.driver.get(ConfigurationReader.get("url"));
-//        homePage.acceptCookie();
-//    }
 
     @Given("the user navigates to the \"Montana Wind Jacket\" product page")
     public void jacketPage() {

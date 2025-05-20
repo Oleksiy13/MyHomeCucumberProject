@@ -20,7 +20,7 @@ public class SortSteps {
 
     private final TestContext context;
     private HomePage homePage;
-    private ProductPage productPage; // Не инициализируем здесь
+    private ProductPage productPage;
     private List<String> productNamesBeforeSort;
 
     public SortSteps(TestContext context) {
@@ -31,8 +31,8 @@ public class SortSteps {
 
     @And("the user navigates to the product page")
     public void the_user_navigates_to_the_product_page() {
-        productPage = homePage.goToProductsPage(); // Инициализируем ProductPage после перехода
-        productNamesBeforeSort = productPage.getProductNames(); // Получаем названия сразу после перехода
+        productPage = homePage.goToProductsPage();
+        productNamesBeforeSort = productPage.getProductNames();
     }
 
     @When("the user sort products by name")
@@ -44,8 +44,8 @@ public class SortSteps {
     public void the_products_are_displayed_in_alphabetical_order() {
         List<String> sortedNames = new ArrayList<>(productNamesBeforeSort);
         Collections.sort(sortedNames, String.CASE_INSENSITIVE_ORDER);
-        context.wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector(".product-item-link"))); // Используем context.wait
-        List<String> productNamesAfterSort = productPage.getProductNames();  // Получаем список *после* сортировки
+        context.wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector(".product-item-link")));
+        List<String> productNamesAfterSort = productPage.getProductNames();
         Assertions.assertEquals(sortedNames, productNamesAfterSort, "Products are not sorted alphabetically.");
     }
 }
