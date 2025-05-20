@@ -1,4 +1,7 @@
 Feature: Product sorting
+  As a user of the site,
+  I want to be able to sort the featured products.
+
 
   Scenario: User sorts products by name
     Given the user is on the home page

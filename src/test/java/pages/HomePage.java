@@ -99,4 +99,9 @@ public class HomePage extends BasePage {
         context.driver.get(ConfigurationReader.get("productListUrl"));
         return new ProductPage(context);
     }
+
+    public NewCustomerPage goToCreateAccountPage(){
+        context.driver.get(ConfigurationReader.get("createAccountUrl"));
+        return new NewCustomerPage(context);
+    }
 }
